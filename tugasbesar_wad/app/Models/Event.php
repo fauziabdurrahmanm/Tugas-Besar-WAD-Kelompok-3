@@ -33,4 +33,10 @@ class Event extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function speakers()
+    {
+        return $this->hasMany(Speaker::class);
+    }
+
 }

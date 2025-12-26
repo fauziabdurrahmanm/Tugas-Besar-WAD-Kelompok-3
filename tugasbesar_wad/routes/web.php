@@ -29,3 +29,4 @@ Route::resource('speakers', SpeakerController::class);       // Anggota 3
 Route::resource('reviews', ReviewController::class);         // Anggota 4
 
 
+Route::get('/github/{username}', [SpeakerController::class, 'fetchGithub']);
