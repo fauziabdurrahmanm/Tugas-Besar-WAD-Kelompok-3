@@ -26,6 +26,8 @@ Route::resource('events', EventController::class);           // Ketua
 Route::resource('venues', VenueController::class);           // Anggota 1
 Route::resource('participants', ParticipantController::class); // Anggota 2
 Route::resource('speakers', SpeakerController::class);       // Anggota 3
-Route::resource('reviews', ReviewController::class);         // Anggota 4
 
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');        // Anggota 4
+Route::patch('/reviews/{id}/toggle', [ReviewController::class, 'toggleStatus'])->name('reviews.toggle');
+Route::delete('/reviews/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
 
