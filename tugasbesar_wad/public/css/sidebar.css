@@ -1,0 +1,208 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f5f5f5; /* Background body abu-abu muda biar sidebar kelihatan */
+}
+
+/* --- KONTAINER SIDEBAR --- */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e0e0e0;
+    position: fixed; /* Agar sidebar diam saat scroll */
+    left: 0;
+    top: 0;
+}
+
+/* --- HEADER (LOGO) --- */
+.sidebar-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 15px;
+}
+
+.logo-box {
+    width: 40px;
+    height: 40px;
+    background-color: #00bfd8; /* Warna Teal Vettix */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a202c;
+    letter-spacing: -0.5px;
+}
+
+/* --- MENU NAVIGASI --- */
+.sidebar-menu {
+    flex-grow: 1; /* Mengisi ruang kosong agar footer terdorong ke bawah */
+    padding-top: 20px;
+    overflow-y: auto; /* Scroll jika menu terlalu panjang */
+}
+
+.sidebar-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center; /* Vertikal center icon dan teks */
+    width: 100%;
+    margin: 0;
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2d3748; /* Warna teks abu gelap */
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-link i {
+    width: 24px; /* Lebar tetap agar teks rata kiri */
+    font-size: 18px;
+    margin-right: 12px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+    background-color: #f7fafc;
+    color: #00bfd8;
+}
+
+/* --- STATE ACTIVE (Dashboard) --- */
+/* Sesuai gambar: Background Teal Penuh, Teks Putih */
+.nav-link.active {
+    background-color: #00bfd8;
+    color: #ffffff;
+}
+
+/* Mengatur spasi line-height untuk teks panjang seperti "Organisasi..." */
+.nav-link span {
+    line-height: 1.4;
+}
+
+/* --- FOOTER (USER PROFILE) --- */
+.sidebar-footer {
+    padding: 20px 24px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #2d3748;
+}
+
+.user-role {
+    font-size: 12px;
+    color: #718096;
+    font-weight: 400;
+}
+
+.menu-dots {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #718096;
+    font-size: 16px;
+}
+
+.main-content {
+    margin-left: 280px; /* Jarak kiri sebesar lebar sidebar */
+    min-height: 100vh;
+    padding: 30px;
+    background-color: #f8f9fa; /* Warna background halaman utama */
+}
+
+.topbar {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.text-muted {
+    color: #98a4b6 !important;
+}
+
+.bg-red {
+    background-color: #bb5353 !important;
+}
+.bg-green {
+    background-color: #96d334 !important;
+}
+.bg-teal {
+    background-color: #2fbbcb !important;
+}
+.bg-purple {
+    background-color: #a534af !important;
+}
+.button {
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Responsif untuk layar kecil (HP) */
+@media (max-width: 768px) {
+    .sidebar {
+        left: -280px; /* Sembunyikan sidebar */
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .sidebar.show {
+        left: 0; /* Munculkan jika ada class show */
+    }
+
+    .main-content {
+        margin-left: 0; /* Konten jadi full width */
+    }
+}
