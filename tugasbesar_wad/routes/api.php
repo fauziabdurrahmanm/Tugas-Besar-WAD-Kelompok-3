@@ -21,3 +21,14 @@ Route::prefix('events')->group(function () {
     // DELETE (Destroy)
     Route::delete('/{id}', [EventApiController::class, 'destroy']);
 });
+
+use App\Http\Controllers\Api\VenueApiController;
+
+Route::prefix('venues')->group(function () {
+    Route::get('/', [VenueApiController::class, 'index']);
+    Route::get('/{id}', [VenueApiController::class, 'show']);
+    Route::post('/', [VenueApiController::class, 'store']);
+    Route::put('/{id}', [VenueApiController::class, 'update']);
+    Route::delete('/{id}', [VenueApiController::class, 'destroy']);
+});
+

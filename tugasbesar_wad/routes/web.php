@@ -29,3 +29,9 @@ Route::resource('speakers', SpeakerController::class);       // Anggota 3
 Route::resource('reviews', ReviewController::class);         // Anggota 4
 
 
+
+Route::get('/venues', [VenueController::class, 'index'])->name('venues.index');
+Route::post('/venues', [VenueController::class, 'store'])->name('venues.store');
+Route::delete('/venues/{id}', [VenueController::class, 'destroy'])->name('venues.destroy');
+
+
