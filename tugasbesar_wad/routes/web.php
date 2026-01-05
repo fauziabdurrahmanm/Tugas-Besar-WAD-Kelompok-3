@@ -20,7 +20,7 @@ Route::get('/certificates', [DashboardController::class, 'index'])->name('certif
 Route::get('/speakers', [DashboardController::class, 'index'])->name('speakers.index');
 Route::get('/reviews', [DashboardController::class, 'index'])->name('reviews.index');
 
-
+Route::get('/venues/print-preview', [VenueController::class, 'print'])->name('venues.print.preview');
 // Routing Resource (Otomatis buat rute index, create, store, edit, update, destroy)
 Route::resource('events', EventController::class);           // Ketua
 Route::resource('venues', VenueController::class);           // Anggota 1

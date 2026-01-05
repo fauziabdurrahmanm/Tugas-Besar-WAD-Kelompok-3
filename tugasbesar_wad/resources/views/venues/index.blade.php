@@ -176,10 +176,9 @@
                 Showing {{ count($venues) }} rooms
             </small>
 
-            <button class="btn btn-sm text-success fw-bold">
-                <i class="fa-solid fa-file-arrow-down me-2"></i>
-                Cetak PDF
-            </button>
+            <a href="{{ route('venues.print.preview') }}" target="_blank" class="btn fw-bold px-3 py-2 shadow-sm text-white" style="background-color: #00bfd8; border: none;">
+             <i class="fa-solid fa-file-arrow-down me-2"></i> Export Data Ruangan
+            </a>
         </div>
     </div>
 </div>
@@ -275,5 +274,6 @@
                 });
         }
     });
+
 </script>
 @endsection

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venue;
 use Illuminate\Http\Request;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 class VenueController extends Controller
 {
     // GET /venues - Menampilkan daftar ruangan
@@ -80,4 +80,10 @@ class VenueController extends Controller
 
         return redirect()->route('venues.index')->with('success', 'Ruangan berhasil dihapus!');
     }
+
+   public function print()
+{
+    $venues = Venue::orderBy('nama_venue', 'asc')->get();
+    return view('venues.print', compact('venues'));
+}
 }
